@@ -1,0 +1,108 @@
+div,
+ul,
+li,
+h1,
+h2 {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+}
+
+.stars-group {
+  margin: auto;
+  margin-bottom: 1vw;
+  width: fit-content;
+}
+
+.star {
+  display: inline-block;
+  width: 100px;
+}
+
+#body {
+  width: 55%;
+  margin: 0 auto;
+}
+
+div:hover > .star {
+  content: url(./colored-diamond.png);
+  width: 100px;
+}
+.stars-group .star:hover ~ .star {
+  content: url(./white-diamond.png);
+  width: 100px;
+}
+
+li {
+  display: inline-block;
+  text-transform: none;
+  font-size: 1.3em;
+  border: solid 0px;
+  padding: 1vw;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+li:hover > a {
+  color: #425c63;
+  background: #dbeaee;
+}
+
+li:hover {
+  color: #425c63;
+  background: #dbeaee;
+}
+
+a:active {
+  color: #2874a6d7;
+}
+
+nav {
+  background: #464646;
+}
+
+footer {
+  background: #464646;
+  color: white;
+  text-align: center;
+  padding: 1.5vw 0vw 1.5vw 0vw;
+}
+
+h1,
+h2 {
+  font-family: "Bitter", serif;
+  font-size: 1.7em;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 400;
+  margin: 3vw;
+}
+
+#body > p {
+  text-align: center;
+  font-family: "Lato", sans-serif;
+}
+
+header,
+h2 ~ p {
+  background: #dbeaee;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 1.5vw 0vw 1.5vw 0vw;
+}
+
+h2 ~ p {
+  border-radius: 50px;
+}
+
+h2 ~ p:hover {
+  font-weight: 900;
+  color: #fff;
+  background: #2874a6d7;
+  cursor: pointer;
+}
