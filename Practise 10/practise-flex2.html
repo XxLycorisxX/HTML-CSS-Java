@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Practise2</title>
+    <style>
+      /* контейнер */
+      .container {
+        width: 100%;
+        margin: 0 auto;
+      }
+      header,
+      footer {
+        background-color: cadetblue;
+        height: 50px;
+      }
+      article {
+        background-color: rgba(255, 255, 0, 0.273);
+      }
+      aside {
+        background-color: rgba(0, 255, 21, 0.273);
+      }
+
+      .row {
+        display: flex;
+        flex-direction: row;
+        align-items: stretch;
+        height: 500px;
+        flex-wrap: wrap;
+      }
+
+      .col__article {
+        flex-basis: 400px;
+        flex-grow: 3;
+      }
+
+      .col__aside {
+        flex-basis: 100px;
+        flex-grow: 1;
+      }
+    </style>
+    <link rel="stylesheet" href="practise-flex2.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Шапка страницы</h1>
+    </header>
+    <main class="container">
+      <div class="row">
+        <article class="col col__article">
+          <h1>Основная часть</h1>
+        </article>
+        <aside class="col col__aside">
+          <h1>Боковая область</h1>
+        </aside>
+      </div>
+    </main>
+    <footer>
+      <h1>Футер</h1>
+    </footer>
+  </body>
+</html>

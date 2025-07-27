@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <style>
+    body {
+        font-family: sans-serif;
+        padding: 15px;
+        color: #eee;
+        font-size: 5rem;
+    }
+    .flex-box {
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 1200px; 
+        margin: 0 auto;
+    }
+    .base {
+        background: #016801;
+        min-height: 400px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex: 1;
+    }
+    .side {
+        margin-left: 30px;
+        display: flex;
+        flex: 0 0 300px;
+        flex-direction: column;
+    }
+    .side-itm {
+        background: #01016d;
+        min-height: 200px;
+        margin-bottom: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex: auto;
+        transition: order 1s linear;
+    }
+      /* Последний элемент */
+    .side-itm:last-child {
+        margin-bottom: 0;
+    } 
+    
+    @media screen and (max-width: 800px) {
+    .base {
+        margin-bottom: 30px;
+        flex: 0 0 100%;
+    }
+    .side {
+        margin-left: 0;
+        flex: 1 1 100%;
+        flex-direction: row;
+    }
+    .side-itm {
+        margin: 0 0 0 30px;
+    }
+      /* Первый элемент */
+    .side-itm:first-child {
+        margin-left: 0;
+    }
+    }
+    @media screen and (max-width: 600px) {
+    .side {
+      flex-direction: column;
+    }
+    .side-itm {
+        margin: 30px 0 0 0;
+    }
+      /* Последний элемент */
+    .side-itm:nth-child(1) {
+        order: 2;
+    }
+    .side-itm:nth-child(2) {
+        order: 1;
+    }
+    }  
+  
+    </style>
+    
+    <body>
+        <div class="flex-box">
+          <div class="base">1</div>
+          <div class="side">
+            <div class="side-itm">2</div>
+            <div class="side-itm">3</div>
+          </div>
+        </div>
+    </body>  
+</body>
+</html>
