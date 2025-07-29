@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Анкета</title>
+  </head>
+  <body>
+    <form method="get" action="https://fe.it-academy.by/TestForm.php">
+      <fieldset>
+        <legend>Информация о вас</legend>
+        <label for="NNN">Ваше имя</label>
+        <input
+          placeholder="Введите имя"
+          maxlength="20"
+          name="name"
+          id="NNN"
+        /><br />
+        <label
+          >Ваш возраст
+          <input value="25" name="age" maxlength="2" />
+        </label>
+      </fieldset>
+      <fieldset>
+        <legend>Ваши предпочтения</legend>
+        <label>Вы предпочитаете</label><br />
+        <input type="radio" name="preferences" value="books" checked />Книги
+        <input type="radio" name="preferences" value="films" />Фильмы<br />
+        <select name="Genre">
+          <option value="romance" selected>роман\мелодрама</option>
+          <option value="comedy" selected>приключения\комедия</option>
+          <option value="historical" selected>
+            документальный\исторический
+          </option>
+          <option value="science-fiction" selected>
+            научная фантастика
+          </option></select
+        ><br />
+
+        <label
+          >Комментарий по предпочитаемым жанрам <br />
+
+          <textarea
+            name="comment"
+            maxlength="100"
+            placeholder="Я предпочитаю…"
+          ></textarea>
+        </label>
+      </fieldset>
+
+      <br />
+      <label
+        >Даете согласие на получение рассылки?
+        <input type="checkbox" name="agreement" checked
+      /></label>
+      <input type="hidden" name="location" value="Belarus" /><br />
+      <input type="submit" value="Отправить анкету ✅" />
+      <input type="reset" value="Заполниь заново🔄" />
+    </form>
+  </body>
+</html>
