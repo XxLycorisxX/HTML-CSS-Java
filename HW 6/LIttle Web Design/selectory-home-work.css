@@ -27,12 +27,26 @@ h2 {
   margin: 0 auto;
 }
 
-div:hover > .star {
+/* div:hover > .star {
   content: url(./colored-diamond.png);
   width: 100px;
 }
 .stars-group .star:hover ~ .star {
   content: url(./white-diamond.png);
+  width: 100px;
+} */
+
+.stars-group {
+  transform: rotateY(180deg);
+}
+
+.star:hover {
+  content: url(./colored-diamond.png);
+  width: 100px;
+}
+
+.star:hover ~ .star {
+  content: url(./colored-diamond.png);
   width: 100px;
 }
 
@@ -106,4 +120,120 @@ h2 ~ p:hover {
   color: #fff;
   background: #2874a6d7;
   cursor: pointer;
+}
+
+@keyframes BellAnim {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  25% {
+    transform: rotateZ(-45deg);
+  }
+  50% {
+    transform: rotateZ(0deg);
+  }
+  75% {
+    transform: rotateZ(45deg);
+  }
+  100% {
+    transform: rotateZ(0deg);
+  }
+}
+
+@keyframes SpinnerAnim {
+  0% {
+    transform: rotateZ(-360deg);
+  }
+}
+
+div .spinner > img {
+  animation: SpinnerAnim 5s linear infinite;
+}
+
+div .bell > img {
+  animation: BellAnim 3s linear infinite;
+}
+
+div .spinner {
+  float: left;
+}
+div .bell {
+  margin-top: 1.5vw;
+  float: left;
+  clear: both;
+}
+
+.flex-section {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  width: 55%;
+  padding: 2vw;
+}
+
+.flex-blocks {
+  display: flex;
+  flex-direction: column;
+  gap: 3vw;
+}
+
+.flex-block {
+  display: flex;
+  gap: 2vw;
+  transition: all 0.3s;
+  align-items: center;
+}
+
+div.flex-block img {
+  width: 90%;
+}
+
+.flex-block:hover {
+  transform: scale(1.2);
+}
+
+.flex-text {
+  /* margin: auto; */
+  padding: 10px;
+  flex: 1;
+}
+
+.flex-text > h3 {
+  font-family: "Bitter", serif;
+  font-size: 1.7em;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.flex-text > p {
+  text-align: center;
+  font-family: "Lato", sans-serif;
+}
+
+.flex-img {
+  /* justify-content: end; */
+  flex: 2;
+  padding: 10px;
+}
+/* .flex-img > img {
+  width: 30vw;
+} */
+
+@media all and (max-width: 1200px) {
+  div.flex-block img {
+    width: 267px;
+  }
+  div.flex-img {
+    order: 2;
+  }
+  .flex-block:hover {
+    transform: scale(1);
+  }
+}
+
+@media all and (max-width: 990px) {
+  .flex-block {
+    flex-direction: column;
+  }
 }

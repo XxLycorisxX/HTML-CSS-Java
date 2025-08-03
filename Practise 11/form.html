@@ -6,6 +6,18 @@
     <title>Анкета</title>
   </head>
   <body>
+    <style>
+      .book-genre,
+      .film-genre {
+        display: none;
+      }
+      input[value="books"]:checked ~ .book-genre {
+        display: block;
+      }
+      input[value="films"]:checked ~ .film-genre {
+        display: block;
+      }
+    </style>
     <form method="get" action="https://fe.it-academy.by/TestForm.php">
       <fieldset>
         <legend>Информация о вас</legend>
@@ -15,10 +27,28 @@
           maxlength="20"
           name="name"
           id="NNN"
+          required
+          pattern="[A-Za-zА-Яа-яЁё\s]+"
         /><br />
+        <label>
+          Ваша электронная почта
+          <input
+            type="email"
+            name="email"
+            placeholder="Введите email"
+            required
+          /> </label
+        ><br />
         <label
           >Ваш возраст
-          <input value="25" name="age" maxlength="2" />
+          <input
+            type="number"
+            name="age"
+            value="25"
+            required
+            min="16"
+            max="99"
+          />
         </label>
       </fieldset>
       <fieldset>
@@ -26,16 +56,25 @@
         <label>Вы предпочитаете</label><br />
         <input type="radio" name="preferences" value="books" checked />Книги
         <input type="radio" name="preferences" value="films" />Фильмы<br />
-        <select name="Genre">
-          <option value="romance" selected>роман\мелодрама</option>
-          <option value="comedy" selected>приключения\комедия</option>
-          <option value="historical" selected>
-            документальный\исторический
-          </option>
-          <option value="science-fiction" selected>
-            научная фантастика
-          </option></select
-        ><br />
+        <div class="book-genre">
+          <p>Выберите жанр книг</p>
+          <select name="genre">
+            <option value="romance" selected>роман</option>
+            <option value="comedy">приключения</option>
+            <option value="historical">документальный</option>
+            <option value="science fiction">научная фантастика</option></select
+          ><br />
+        </div>
+        <div class="film-genre">
+          <p>Выберите жанр фильма</p>
+          <select name="film-genre">
+            <option value="romance" selected>мелодрама</option>
+            <option value="comedy">комедия</option>
+            <option value="historical">исторический</option>
+            <option value="science fiction">научная фантастика</option></select
+          ><br />
+        </div>
+        <br />
 
         <label
           >Комментарий по предпочитаемым жанрам <br />
@@ -44,7 +83,16 @@
             name="comment"
             maxlength="100"
             placeholder="Я предпочитаю…"
-          ></textarea>
+          ></textarea></label
+        ><br />
+        <label>
+          Дата выхода произведения не позднее чем (выберите дату)
+          <input
+            type="date"
+            value="2025-01-01"
+            min="1900-01-01"
+            max="2026-01-01"
+          />
         </label>
       </fieldset>
 
