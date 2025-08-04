@@ -156,9 +156,10 @@ div .bell > img {
 
 div .spinner {
   float: left;
+  margin-right: 1vw;
 }
 div .bell {
-  margin-top: 1.5vw;
+  margin-right: 1vw;
   float: left;
   clear: both;
 }
@@ -237,3 +238,4 @@ div.flex-block img {
     flex-direction: column;
   }
 }
+  
