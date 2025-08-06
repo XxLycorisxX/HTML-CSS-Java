@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Регистрация на онлайн курс</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <style>
+      body {
+        background-color: #f5f5f5;
+      }
+
+      .BackGr {
+      }
+
+      h1 {
+        text-align: center;
+        font-weight: bold;
+        font-family: Roboto;
+        margin-bottom: -1vw;
+        color: #444;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        max-width: 600px;
+        margin: auto;
+        background-color: white;
+        border: solid 0px;
+        border-radius: 10px;
+        padding: 1vw;
+        box-shadow: 0 0 5px grey;
+      }
+
+      label {
+        display: flex;
+        flex-direction: column;
+        margin-top: 1vw;
+        font-family: Roboto;
+        font-weight: bold;
+        color: #444;
+      }
+
+      select {
+        padding: 0.5vw;
+        border-radius: 5px;
+      }
+      select:invalid {
+        border-color: #dc3545;
+        box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+      }
+
+      select:valid {
+        border-color: #007bff;
+        box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+      }
+
+      fieldset {
+        margin-top: 2vw;
+        border-color: #ddd;
+        border-radius: 5px;
+        font-family: Roboto;
+        font-weight: bold;
+      }
+
+      legend {
+        color: #555;
+      }
+
+      input {
+        padding: 0.5vw;
+        border-radius: 5px;
+      }
+
+      input:invalid {
+        border-color: #dc3545;
+        box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+      }
+
+      input:valid {
+        border-color: #007bff;
+        box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+      }
+
+      .EmPs {
+        display: flex;
+        flex-direction: row;
+        flex-grow: 1;
+        justify-content: space-between;
+      }
+
+      .Answer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
+      .AnswerTxt {
+        font-weight: normal;
+      }
+
+      .Submit {
+        display: flex;
+        flex-direction: column;
+        margin-top: 1vw;
+      }
+
+      input[type="submit"] {
+        padding: 1vw;
+        background-color: #007bff;
+        color: white;
+        border-radius: 5px;
+        border: 0px;
+        font-family: Roboto;
+        font-size: 1em;
+      }
+      input[type="submit"]:hover {
+        background-color: #0056b3;
+      }
+
+      .Time {
+        display: none;
+      }
+
+      .Date {
+        display: flex;
+        flex-direction: column;
+      }
+
+      input[type="date"]:valid ~ .Time {
+        display: block;
+      }
+
+      @media all and (max-width: 550px) {
+        .EmPs {
+          flex-direction: column;
+        }
+        .Answer {
+          flex-direction: column;
+        }
+      }
+    </style>
+    <div class="BackGr">
+      <form method="post" action="https://fe.it-academy.by/TestForm.php">
+        <h1>Регистрация на онлайн курс</h1>
+        <fieldset>
+          <legend>Личные данные</legend>
+          <label
+            >ФИО
+            <input
+              type="text"
+              name="name"
+              placeholder="Иванов Иван Иванович"
+              required
+              pattern="[А-ЯЁ][а-яё]+\s[А-ЯЁ][а-яё]+"
+            />
+          </label>
+          <div class="EmPs">
+            <label class="Email"
+              >Email
+              <input
+                type="email"
+                name="Email"
+                placeholder="example@mail.com"
+                required
+              />
+            </label>
+            <label class="Password"
+              >Пароль
+              <input
+                type="password"
+                name="Password"
+                placeholder="Не менее 8 символов"
+                maxlength="8"
+                required
+              />
+            </label>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Выбор курса</legend>
+          <label>
+            Курс
+            <select required>
+              <option selected disabled>Выберите курс</option>
+              <option>Веб-разработка</option>
+              <option>Data Science</option>
+              <option>Графический дизайн</option>
+            </select>
+          </label>
+          <div class="Date">
+            <label for="Date"> Дата начала </label>
+            <input
+              type="date"
+              id="Date"
+              name="Date"
+              min="2024-01-01"
+              required
+            />
+            <div class="Time">
+              <label>
+                Предпочитаемое время занятий (между 13:00 и 20:00)
+                <input
+                  type="time"
+                  name="Time"
+                  min="13:00"
+                  max="20:00"
+                  required
+                />
+              </label>
+            </div>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Дополнительно</legend>
+          <label
+            >Опыт в IT:
+            <div class="Answer">
+              <div class="AnswerTxt">
+                Нет опыта
+                <input type="radio" name="answer" value="1" />
+              </div>
+              <div class="AnswerTxt">
+                Начинающий <input type="radio" name="answer" value="2" />
+              </div>
+              <div class="AnswerTxt">
+                Опытный
+                <input type="radio" name="answer" value="3" />
+              </div>
+            </div>
+          </label>
+          <div
+            class="PersData AnswerTxt"
+            style="margin-top: 1vw; margin-bottom: 2vw"
+          >
+            Я солгласен на обработку персональных данных
+            <input type="checkbox" name="PersData" required />
+          </div>
+        </fieldset>
+        <div class="Submit">
+          <input type="submit" value="Отправить заявку" />
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
