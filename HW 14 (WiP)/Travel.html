@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Travel</title>
+  </head>
+  <body>
+    <style>
+      div.container {
+        display: grid;
+        gap: 25px;
+        grid-template-columns: repeat(3, minmax(300px, 1fr));
+        grid-template-rows: repeat(3, minmax(300px, 1fr));
+        grid-template-areas:
+          "Spain Bali Bali"
+          "Spain Egypt Czech"
+          "Spain Turk Italy";
+      }
+
+      div.container > div {
+        text-align: center;
+        padding-top: 20px;
+        font-size: 1.2em;
+        color: rgb(12, 10, 72);
+        transition: all 0.5s;
+      }
+
+      div.container > div:hover {
+        transform: scale(105%);
+      }
+
+      div.container > div.Bali {
+        grid-area: Bali;
+        background: linear-gradient(
+            rgba(255, 255, 255, 0.5),
+            rgba(255, 255, 255, 0.5)
+          ),
+          url(.//Img/images/Bali.jpg);
+        overflow: hidden;
+        background-size: cover;
+      }
+      div.container > div.Spain {
+        grid-area: Spain;
+        background: linear-gradient(
+            rgba(255, 255, 255, 0.5),
+            rgba(255, 255, 255, 0.5)
+          ),
+          url(.//Img/images/Spain.jpg);
+        overflow: hidden;
+        background-size: cover;
+      }
+      div.container > div.Italy {
+        grid-area: Italy;
+        background: linear-gradient(
+            rgba(255, 255, 255, 0.5),
+            rgba(255, 255, 255, 0.5)
+          ),
+          url(.//Img/images/Italy.jpg);
+        overflow: hidden;
+        background-size: cover;
+      }
+      div.container > div.Czech {
+        grid-area: Czech;
+        background: linear-gradient(
+            rgba(255, 255, 255, 0.5),
+            rgba(255, 255, 255, 0.5)
+          ),
+          url(.//Img/images/Czech.jpg);
+        overflow: hidden;
+        background-size: cover;
+      }
+      div.container > div.Turk {
+        grid-area: Turk;
+        background: linear-gradient(
+            rgba(255, 255, 255, 0.5),
+            rgba(255, 255, 255, 0.5)
+          ),
+          url(.//Img/images/Turkey.jpg);
+        overflow: hidden;
+        background-size: cover;
+      }
+      div.container > div.Egypt {
+        grid-area: Egypt;
+        background: linear-gradient(
+            rgba(255, 255, 255, 0.5),
+            rgba(255, 255, 255, 0.5)
+          ),
+          url(.//Img/images/Egypt.jpg);
+        overflow: hidden;
+        background-size: cover;
+      }
+    </style>
+    <div class="container">
+      <div class="Bali">
+        <h1>Бали</h1>
+      </div>
+      <div class="Spain">
+        <h1>Испания</h1>
+      </div>
+      <div class="Italy">
+        <h1>Италия</h1>
+      </div>
+      <div class="Czech">
+        <h1>Чехия</h1>
+      </div>
+      <div class="Turk">
+        <h1>Турция</h1>
+      </div>
+      <div class="Egypt">
+        <h1>Египет</h1>
+      </div>
+    </div>
+  </body>
+</html>
