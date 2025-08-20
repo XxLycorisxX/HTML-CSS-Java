@@ -23,11 +23,7 @@
         padding-top: 20px;
         font-size: 1.2em;
         color: rgb(12, 10, 72);
-        transition: all 0.5s;
-      }
-
-      div.container > div:hover {
-        transform: scale(105%);
+        transition: transform 0.5s;
       }
 
       div.container > div.Bali {
@@ -89,6 +85,73 @@
           url(.//Img/images/Egypt.jpg);
         overflow: hidden;
         background-size: cover;
+      }
+
+      div.container > div:hover {
+        transform: scale(105%);
+        font-size: 0;
+      }
+
+      div.container > div.Bali:hover {
+        background: url(.//Img/images/Bali.jpg);
+        overflow: hidden;
+        background-size: cover;
+      }
+      div.container > div.Spain:hover {
+        background: url(.//Img/images/Spain.jpg);
+        overflow: hidden;
+        background-size: cover;
+      }
+      div.container > div.Italy:hover {
+        background: url(.//Img/images/Italy.jpg);
+        overflow: hidden;
+        background-size: cover;
+      }
+      div.container > div.Czech:hover {
+        background: url(.//Img/images/Czech.jpg);
+        overflow: hidden;
+        background-size: cover;
+      }
+      div.container > div.Turk:hover {
+        background: url(.//Img/images/Turkey.jpg);
+        overflow: hidden;
+        background-size: cover;
+      }
+      div.container > div.Egypt:hover {
+        background: url(.//Img/images/Egypt.jpg);
+        overflow: hidden;
+        background-size: cover;
+      }
+
+      @media all and (max-width: 840px) {
+        div.container {
+          display: grid;
+          gap: 25px;
+          grid-template-columns: repeat(2, minmax(300px, 1fr));
+          grid-template-rows: repeat(4, minmax(300px, 1fr));
+          grid-template-areas:
+            "Bali Bali"
+            "Spain Egypt"
+            "Spain Czech"
+            "Turk Italy";
+        }
+      }
+
+      @media all and (max-width: 635px) {
+        div.container {
+          display: grid;
+          gap: 25px;
+          grid-template-columns: repeat(1, minmax(300px, 1fr));
+          grid-template-rows: repeat(6, minmax(300px, 1fr));
+
+          grid-template-areas:
+            "Bali"
+            "Spain"
+            "Italy"
+            "Czech"
+            "Turk"
+            "Egypt";
+        }
       }
     </style>
     <div class="container">
