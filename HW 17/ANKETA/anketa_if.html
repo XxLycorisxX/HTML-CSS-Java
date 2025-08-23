@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anketa_if</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+      let SurName = String(prompt("Введите свою фамилию"));
+      let Name = String(prompt("Введите своё имя"));
+      let FathName = String(prompt("Введите своё отчество"));
+
+      let Age = Number(prompt("Введите свой возраст в годах"));
+
+      let Gender = null;
+      if (confirm("Ваш пол - мужской?") == true) {
+        Gender = "Мужской";
+      } else {
+        Gender = "Женский";
+      }
+
+      let Pension = null;
+      if (Gender == "Мужской") {
+        if (Age >= 63) {
+          Pension = "Да";
+        } else {
+          Pension = "Нет";
+        }
+      } else {
+        if (Age >= 58) {
+          Pension = "Да";
+        } else {
+          Pension = "Нет";
+        }
+      }
+
+      alert(
+        `Ваше ФИО: ${SurName} ${Name} ${FathName} \nВаш возраст в годах: ${Age} \nВаш возраст в днях: ${
+          Age * 365
+        } \nЧерез 5 лет вам будет: ${
+          Age + 5
+        } \nВаш пол: ${Gender} \nВы на пенсии: ${Pension}`
+      );
+    </script>
+  </body>
+</html>

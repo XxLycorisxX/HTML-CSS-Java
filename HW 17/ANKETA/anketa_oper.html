@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anketa_oper</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+      let SurName = String(prompt("Введите свою фамилию"));
+      let Name = String(prompt("Введите своё имя"));
+      let FathName = String(prompt("Введите своё отчество"));
+
+      let Age = Number(prompt("Введите свой возраст в годах"));
+
+      let Gender = confirm("Ваш пол - мужской?") ? "Мужской" : "Женский";
+      let Pension =
+        (Age >= 63 && Gender == "Мужской") || (Age >= 58 && Gender == "Женский")
+          ? "Да"
+          : "Нет";
+
+      alert(
+        `Ваше ФИО: ${SurName} ${Name} ${FathName} \nВаш возраст в годах: ${Age} \nВаш возраст в днях: ${
+          Age * 365
+        } \nЧерез 5 лет вам будет: ${
+          Age + 5
+        } \nВаш пол: ${Gender} \nВы на пенсии: ${Pension}`
+      );
+    </script>
+  </body>
+</html>
