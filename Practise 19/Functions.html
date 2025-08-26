@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Functions 19L</title>
+  </head>
+  <body>
+    <script>
+      function Task1(a, b, c) {
+        alert(`Среднее арифм. = ${(a + b + c) / 3}`);
+      }
+
+      //   Task1(2, 2, 5);
+
+      function min(a, b) {
+        if (a < b) {
+          return a;
+        } else {
+          return b;
+        }
+      }
+      //   console.log(min(2, 3));
+
+      function pow(a, b) {
+        return a ** b;
+      }
+      //   console.log(pow(2, 3));
+
+      function convertNumber(sec) {
+        sec = Number(prompt("Введите количество секунд"));
+        let dec = Number(
+          prompt(
+            "Введите цифру соотвествующую номеру варианта \nСекунды перевести в: \n 1. Минуты \n 2. Часы \n 3. Дни \n 4. Годы"
+          )
+        );
+        if ((dec = 1)) {
+          alert(sec / 60);
+        } else if ((dec = 2)) {
+          alert(sec / 60 / 60);
+        } else if ((dec = 3)) {
+          alert(sec / 60 / 60 / 24);
+        } else if ((dec = 4)) {
+          alert(sec / 60 / 60 / 24 / 365);
+        }
+      }
+      //   convertNumber();
+
+      const market = {
+        apples: 10,
+        oranges: 5,
+        pears: 15,
+        bananas: 0,
+        lemons: 20,
+      };
+
+      function WhatUNeed() {
+        let prod = prompt(
+          "О каком продукте вы желаете узнать информацию?\napples, \noranges, \npears, \nbananas, \nlemons"
+        );
+        if (prod in market) {
+          alert(`${market[prod]}`);
+        } else {
+          alert("Error");
+        }
+        delete market.bananas;
+        market.lemons = 20;
+      }
+      WhatUNeed();
+    </script>
+  </body>           
+</html>
