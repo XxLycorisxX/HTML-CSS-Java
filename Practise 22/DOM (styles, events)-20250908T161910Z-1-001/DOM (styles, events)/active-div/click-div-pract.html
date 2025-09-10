@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Active Div</title>
+    <style>
+      body {
+        background-color: blanchedalmond;
+      }
+
+      .active {
+        border: 2px solid black;
+        background-color: rgb(140, 140, 239);
+        color: white;
+        padding: 10px;
+        box-shadow: 10px;
+        position: absolute;
+        top: 100px;
+        right: 30%;
+        left: 30%;
+      }
+    </style>
+  </head>
+  <body>
+    <div data-id="0">
+      <h3>Лошадь</h3>
+      <p>
+        Домашняя лошадь — животное семейства непарнокопытных, одомашненный и
+        единственный сохранившийся подвид дикой лошади, вымершей в дикой
+        природе, за исключением небольшой популяции лошади Пржевальского.
+      </p>
+    </div>
+
+    <!-- <div data-id="1">
+    <h3>Осёл</h3>
+    <p>Домашний осёл (лат. Equus asinus asinus), или ишак, 
+      — одомашненный подвид дикого осла (Equus asinus), 
+      сыгравший важную историческую роль в развитии хозяйства и культуры человека 
+      и по-прежнему широко в хозяйстве многих развивающихся стран.
+    </p>
+  </div>
+  <div data-id="2">
+    <h3>Кошка</h3>
+    <p>Кошка, или домашняя кошка (лат. Felis silvestris catus), —
+       домашнее животное, одно из наиболее популярных(наряду с собакой)
+        «животных-компаньонов». Являясь одиночным охотником на грызунов 
+        и других мелких животных, кошка — социальное животное, использующее 
+        для общения широкий диапазон звуковых сигналов.
+    </p>
+  </div> -->
+    <script>
+      document.querySelector('div[data-id="0"]').onclick = function () {
+        document.querySelector('div[data-id="0"]').classList.toggle("active");
+      };
+    </script>
+  </body>
+</html>

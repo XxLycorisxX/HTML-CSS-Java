@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Task 1
+      function Tsk1(arr, el) {
+        arr[arr.length] = el;
+        return arr;
+      }
+      //   let a = Tsk1()
+
+      //Task 2
+      function isValid(str) {
+        if (str.length > 8 && str.length < 32) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+      //   let a = "asdad";
+      //   isValid(a);
+
+      //Task 3
+      function AskUser() {
+        let arr = [];
+        for (let i = 0; i < 10; i++) {
+          let el = prompt("Значение элемента массива:");
+          arr.push(el);
+        }
+        console.log(arr);
+      }
+      //   AskUser();
+
+      //Task 4
+      function SmthMore() {
+        let arr = ["что-то", "ещё"];
+        let el = arr.pop();
+
+        arr.unshift(el);
+        console.log(arr);
+      }
+      //   SmthMore();
+
+      //Task 5
+      function Summ(arr) {
+        let sum = 0;
+        for (let i = 0; i < arr.length; i++) {
+          sum += arr[i];
+        }
+        return sum;
+      }
+      //   console.log(Summ([1, 2, 3, 4, 5, 6]));
+
+      //Task 6
+      function Flip(arr) {
+        let arrNew = [];
+        for (let element of arr) {
+          arrNew.push(-element);
+        }
+        return arrNew;
+      }
+      //   console.log(Flip([1, -2, 3, -4, 5, -6]));
+
+      //Task 7
+      function aToArray(arr) {
+        for (let i = 0; i < arr.length; i++) {
+          if ((arr[i][0] = "a")) {
+            arr[i] = "array";
+          }
+          return arr;
+        }
+      }
+      console.log(aToArray(["asdasd", "basdasd", "vbvb"]));
+    </script>
+  </body>
+</html>

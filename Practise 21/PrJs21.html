@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Task 1
+      let arr = [
+        {
+          id: 1,
+          name: "Leggings",
+          price: 5,
+        },
+        {
+          id: 2,
+          name: "Cardigan",
+          price: 49.9,
+        },
+        {
+          id: 4,
+          name: "Dressing gown",
+          price: 55,
+        },
+        {
+          id: 11,
+          name: "Dress",
+          price: 70.9,
+        },
+        {
+          id: 33,
+          name: "Jacket",
+          price: 86.7,
+        },
+        {
+          id: 8,
+          name: "Coat",
+          price: 99.9,
+        },
+      ];
+
+      function getByName(name) {
+        name = prompt("Enter Name");
+        for (let good of arr) {
+          if (good.name == name) {
+            return good;
+          }
+        }
+        return "Invalid Name";
+      }
+      console.log(getByName());
+    </script>
+  </body>
+</html>
