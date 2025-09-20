@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .item {
+        padding: 10px;
+        margin: 5px;
+        background-color: #f0f0f0;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      .selected {
+        background-color: #4caf50;
+        color: white;
+      }
+
+      .disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="items">
+      <div class="item" data-id="1">Элемент 1</div>
+      <div class="item" data-id="2">Элемент 2</div>
+      <div class="item" data-id="3">Элемент 3</div>
+      <div class="item" data-id="4">Элемент 4</div>
+    </div>
+
+    <button id="disableBtn">Отключить выбранные</button>
+
+    <script>
+      const elements = document.querySelectorAll(".item");
+      elements.forEach((element) => {
+        element.onclick = function () {
+          element.classList.toggle("selected");
+        };
+      });
+
+      const butt = document.getElementById("disableBtn");
+      butt.onclick = function () {
+        let elements = document.querySelectorAll(".item.selected");
+        for (let el of elements) {
+          el.classList.remove("selected");
+        }
+      };
+    </script>
+  </body>
+</html>

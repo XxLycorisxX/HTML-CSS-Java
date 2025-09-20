@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      span {
+        color: blue;
+        text-decoration: underline;
+      }
+
+      .spoiler:not(.active) {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <p>
+      Цели и задачи курса
+      <span class="toggle">развернуть</span>
+    </p>
+    <ul class="spoiler">
+      <li>Освоите синтаксис и семантику тегов языка разметки HTML.</li>
+      <li>Разберетесь в селекторах CSS и тонкостях работы с ними.</li>
+      <li>
+        Научитесь читать структуру исходного текста веб-страницы и разбираться в
+        ней.
+      </li>
+      <li>Узнаете, как создавать веб-формы любых сложностей.</li>
+      <li>
+        Научитесь создавать интерфейсы для разных устройств (смартфоны, планшеты
+        и т.д.).
+      </li>
+      <li>
+        Изучите Flexbox и сможете легко контролировать контент на веб-странице.
+      </li>
+      <li>Научитесь строить сложные адаптивные сетки на Grid Layout.</li>
+      <li>
+        Поймете, как добавлять динамику, создавать анимации и плавные переходы.
+      </li>
+      <li>Познакомитесь с синтаксисом языка JavaScript.</li>
+      <li>
+        Исследуете основные типы данных и освоите работу с условиями и циклами.
+      </li>
+      <li>Поймете, как создавать объекты и массивы и использовать их.</li>
+      <li>Рассмотрите понятие «функция» и ее важность в JavaScript.</li>
+      <li>
+        Узнаете, что такое DOM и научитесь добавлять вёрстку с помощью
+        JavaScript.
+      </li>
+      <li>
+        Разберетесь, как управлять взаимодействием с формами, изображениями и
+        ссылками.
+      </li>
+      <li>Научитесь контролировать содержимое веб-страницы.</li>
+    </ul>
+    <script>
+      function spanToggle() {
+        const span = document.querySelector("span.toggle");
+        span.onclick = function () {
+          let list = document.querySelector("ul.spoiler");
+          list.classList.toggle("active");
+          if (list.classList.contains("active")) {
+            span.textContent = "свернуть";
+          } else {
+            span.textContent = "развернуть";
+          }
+        };
+      }
+      spanToggle();
+
+      
+    </script>
+  </body>
+</html>
