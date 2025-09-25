@@ -74,89 +74,77 @@ liList.forEach((li) => {
   });
 });
 
-// Image scaling for MATERIAL section pictures
-const materialPictures = document.querySelectorAll('#MATERIALS .picture img');
-
-materialPictures.forEach((img) => {
-  img.addEventListener('mouseenter', function() {
-    this.style.transform = 'scale(1.08)';
-    this.style.transition = 'all 0.3s ease';
-    this.style.cursor = 'pointer';
-    this.style.filter = 'brightness(1.1)';
-    this.style.boxShadow = '0 15px 30px rgba(0, 0, 0, 0.2)';
-  });
-  
-  img.addEventListener('mouseleave', function() {
-    this.style.transform = 'scale(1)';
-    this.style.transition = 'all 0.3s ease';
-    this.style.filter = 'brightness(1)';
-    this.style.boxShadow = 'none';
-  });
-});
-
 // Mobile menu functionality
 const createMobileMenu = () => {
   const header = document.querySelector('header');
   const menuBtns = document.querySelector('.menuBtns');
   const headDiv = document.querySelector('.head');
+  const hamburgerBtn = document.querySelector('.mobile-menu-btn');
   
-  // Create hamburger button
-  const hamburgerBtn = document.createElement('button');
-  hamburgerBtn.innerHTML = '☰';
-  hamburgerBtn.className = 'mobile-menu-btn';
-  hamburgerBtn.style.cssText = `
-    display: none;
-    background: none;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-    padding: 10px;
-    z-index: 400;
-  `;
-
-  // Insert hamburger button
-  headDiv.appendChild(hamburgerBtn);
-
   // Toggle menu function
   const toggleMenu = () => {
     menuBtns.classList.toggle('mobile-open');
     hamburgerBtn.innerHTML = menuBtns.classList.contains('mobile-open') ? '✕' : '☰';
+    
+    // Prevent body scroll when menu is open
+    if (menuBtns.classList.contains('mobile-open')) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
   };
 
   hamburgerBtn.addEventListener('click', toggleMenu);
 
-  // Close menu when clicking outside
-  document.addEventListener('click', (e) => {
-    if (!header.contains(e.target) && menuBtns.classList.contains('mobile-open')) {
+  // Close menu when clicking on a link
+  menuBtns.addEventListener('click', (e) => {
+    if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON') {
       menuBtns.classList.remove('mobile-open');
       hamburgerBtn.innerHTML = '☰';
+      document.body.style.overflow = '';
     }
   });
 
-  // Show/hide hamburger based on screen size
-  const checkScreenSize = () => {
-    if (window.innerWidth <= 767) {
-      hamburgerBtn.style.display = 'block';
-      menuBtns.style.display = 'none';
-    } else {
-      hamburgerBtn.style.display = 'none';
-      menuBtns.style.display = 'flex';
+  // Handle window resize
+  const handleResize = () => {
+    if (window.innerWidth > 921) {
       menuBtns.classList.remove('mobile-open');
       hamburgerBtn.innerHTML = '☰';
+      document.body.style.overflow = '';
     }
   };
 
-  // Close menu on link click
-  menuBtns.addEventListener('click', (e) => {
-    if (e.target.tagName === 'BUTTON' && window.innerWidth <= 767) {
-      menuBtns.classList.remove('mobile-open');
-      hamburgerBtn.innerHTML = '☰';
-    }
-  });
-
-  checkScreenSize();
-  window.addEventListener('resize', checkScreenSize);
+  window.addEventListener('resize', handleResize);
 };
 
-// Initialize mobile menu when DOM is loaded
-document.addEventListener('DOMContentLoaded', createMobileMenu);
+// Form validation
+const enhanceFormValidation = () => {
+  const form = document.querySelector('form');
+  const inputs = form.querySelectorAll('input, textarea');
+  
+  inputs.forEach(input => {
+    
+    input.addEventListener('focus', function() {
+      this.style.borderColor = '#2c3878';
+      this.style.boxShadow = '0 0 0 2px rgba(44, 56, 120, 0.2)';
+    });
+    
+    input.addEventListener('blur', function() {
+      this.style.borderColor = 'lightgray';
+      this.style.boxShadow = 'none';
+    });
+    
+    
+    input.addEventListener('input', function() {
+      if (this.validity.valid) {
+        this.style.borderColor = '#4CAF50';
+      } else {
+        this.style.borderColor = '#f44336';
+      }
+    });
+  });
+};
+
+
+
+

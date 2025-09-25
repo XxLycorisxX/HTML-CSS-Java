@@ -31,7 +31,7 @@ body {
   font-family: Poppins, sans-serif;
 }
 
-/* ===== RESPONSIVE CONTAINER ===== */
+/* ===== CONTAINER ===== */
 div.body {
   background-color: white;
   margin: 0 auto;
@@ -43,13 +43,14 @@ div.body {
   padding: 0 20px;
 }
 
-/* ===== HEADER RESPONSIVE ===== */
+/* ===== HEADER ===== */
 header {
   position: fixed;
   background-color: white;
   width: 100%;
   margin-top: -8px;
   z-index: 300;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 header div.head {
@@ -104,7 +105,7 @@ div#logo {
   height: 60px;
 }
 
-/* ===== HERO SECTION RESPONSIVE ===== */
+/* ===== HERO SECTION ===== */
 div.hero {
   margin-top: 5vw;
   font-family: Poppins;
@@ -595,47 +596,67 @@ div.followBtns a:hover {
   transition: all 0.3s linear;
 }
 
+/* ===== MOBILE MENU ===== */
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 400;
+}
+
 /* ===== RESPONSIVE MEDIA QUERIES ===== */
 
-/* Tablets (922px - 1199px) */
+/* Large Tablets (922px - 1199px) */
 @media (max-width: 1199px) {
   div.body {
     padding: 0 40px;
+    margin-top: 60px;
   }
 
   header div.head {
     padding: 0 40px;
   }
 
-  div.hero h1 {
-    font-size: 60px;
-    width: 100%;
+  div.hero-title h1 {
+    font-size: 48px;
     text-align: center;
-    margin-bottom: 30px;
   }
 
-  div.hero p {
-    position: relative;
-    transform: none;
-    width: 100%;
+  div.hero-title p {
+    width: 80%;
     text-align: center;
-    margin: 20px 0;
   }
 
-  div.hero div.line {
-    position: relative;
+  form {
     width: 100%;
-    left: 0;
-    margin: 20px 0;
   }
 
-  div.serviceContent {
-    width: 100%;
-    height: auto;
+  div.fullName-container {
+    flex-direction: column;
+    gap: 20px;
   }
 
-  div.serviceContent ul {
+  div.fullName-container label.fullName,
+  div.fullName-container label.fullName input {
     width: 100%;
+  }
+
+  label.label input,
+  label.label textarea {
+    width: 100%;
+  }
+
+  div.locations-container {
+    width: 100%;
+    justify-content: flex-start;
+    margin-top: 50px;
+  }
+
+  div.locations {
+    width: calc(50% - 15px);
   }
 
   div.blueLine {
@@ -647,10 +668,11 @@ div.followBtns a:hover {
   }
 
   div.mainFoot {
-    flex-direction: row;
+    flex-direction: column;
     height: auto;
-    gap: 40px;
+    gap: 250px;
     padding: 40px 20px;
+    justify-content: flex-start;
   }
 
   p.bigText,
@@ -661,10 +683,11 @@ div.followBtns a:hover {
   }
 }
 
-/* Mobile Devices (921px and below) */
-@media (max-width: 767px) {
+/* Tablets (768px - 921px) */
+@media (max-width: 921px) {
   div.body {
     margin-top: 60px;
+    padding: 0 20px;
   }
 
   header div.head {
@@ -672,19 +695,28 @@ div.followBtns a:hover {
     height: 80px;
   }
 
+  .mobile-menu-btn {
+    display: block;
+  }
+
   header div.menuBtns {
     display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: white;
+    flex-direction: column;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    gap: 15px;
   }
 
-  .mobile-menu-btn {
-    display: block !important;
-    background: none;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
+  header div.menuBtns.mobile-open {
+    display: flex;
   }
 
-  div.hero h1 {
+  div.hero-title h1 {
     font-size: 36px;
   }
 
@@ -692,16 +724,22 @@ div.followBtns a:hover {
     font-size: 28px;
   }
 
-  div.serviceContent ul {
-    font-size: 20px;
+  div.line {
+    width: 100%;
   }
 
-  .service-number {
-    font-size: 20px;
+  div.location-content {
+    flex-direction: column;
   }
 
-  p.bigText {
-    font-size: 28px;
+  div.firstCol {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  div.locations {
+    width: 100%;
+    height: auto;
   }
 
   div.blueLine {
@@ -709,14 +747,71 @@ div.followBtns a:hover {
     padding: 30px 20px;
   }
 
-  div.mainFoot {
-    gap: 30px;
-    padding: 30px 20px;
-    padding-left: 30px;
+  p.bigText {
+    font-size: 28px;
+  }
+}
+
+/* Mobile Devices (480px - 767px) */
+@media (max-width: 767px) {
+  div.body {
+    padding: 0 15px;
+    margin-top: 50px;
   }
 
-  form {
-    margin-top: 30px;
+  header div.head {
+    padding: 0 15px;
+    height: 70px;
+  }
+
+  div#logo svg {
+    width: 100px;
+    height: auto;
+  }
+
+  div.hero-title h1 {
+    font-size: 32px;
+  }
+
+  div.hero-title p {
+    font-size: 16px;
+    width: 100%;
+  }
+
+  div.body h2 {
+    font-size: 24px;
+    margin-top: 0;
+  }
+
+  div.locations-container {
+    flex-direction: column;
+  }
+
+  div.locations {
+    width: 100%;
+  }
+
+  div.blueLine {
+    padding: 20px 15px;
+  }
+
+  p.bigText {
+    font-size: 24px;
+  }
+
+  div.btnPContainer p {
+    font-size: 16px;
+  }
+
+  button#BlueBtn,
+  button#footContact {
+    width: 120px;
+    height: 45px;
+    font-size: 14px;
+  }
+
+  div.mainFoot {
+    padding: 30px 15px;
   }
 
   label {
@@ -735,42 +830,42 @@ div.followBtns a:hover {
 /* Small Mobile Devices (480px and below) */
 @media (max-width: 480px) {
   div.body {
-    padding: 0 15px;
+    padding: 0 10px;
   }
 
   header div.head {
-    padding: 0 15px;
+    padding: 0 10px;
   }
 
-  div.hero h1 {
+  div.hero-title h1 {
     font-size: 28px;
   }
 
+  div.hero-title p {
+    font-size: 14px;
+  }
+
   div.body h2 {
-    font-size: 24px;
-  }
-
-  div.serviceContent ul {
-    font-size: 18px;
-  }
-
-  .service-number {
-    font-size: 18px;
+    font-size: 22px;
   }
 
   p.bigText {
-    font-size: 24px;
+    font-size: 20px;
   }
 
   div.btnPContainer p {
-    font-size: 16px;
+    font-size: 14px;
   }
 
-  button#BlueBtn,
-  button#footContact {
-    width: 120px;
-    height: 45px;
+  div.fullName-container label.fullName input,
+  label.label input,
+  label.label textarea {
+    padding: 12px 20px;
     font-size: 14px;
+  }
+
+  div.followBtns {
+    gap: 15px;
   }
 }
 
@@ -783,29 +878,6 @@ div.followBtns a:hover {
   header div.head {
     padding: 0;
   }
-}
-
-/* Mobile Menu Styles */
-.mobile-menu-btn {
-  display: none;
-  background: none;
-  border: none;
-  font-size: 24px;
-  cursor: pointer;
-  padding: 10px;
-}
-
-.menuBtns.mobile-open {
-  display: flex !important;
-  flex-direction: column;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  background: white;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  gap: 15px;
 }
 
 img {

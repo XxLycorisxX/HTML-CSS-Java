@@ -31,7 +31,7 @@ body {
   font-family: Poppins, sans-serif;
 }
 
-/* ===== RESPONSIVE CONTAINER ===== */
+/* ===== CONTAINER ===== */
 div.body {
   background-color: white;
   margin: 0 auto;
@@ -43,7 +43,7 @@ div.body {
   padding: 0 20px;
 }
 
-/* ===== HEADER RESPONSIVE ===== */
+/* ===== HEADER ===== */
 header {
   position: fixed;
   background-color: white;
@@ -108,7 +108,7 @@ div#logo {
   font-weight: 700;
 }
 
-/* ===== HERO SECTION RESPONSIVE ===== */
+/* ===== HERO SECTION ===== */
 div.hero {
   margin-top: 5vw;
   font-family: Poppins;
@@ -796,7 +796,7 @@ div.followBtns a:hover {
 }
 
 /* Mobile Devices (921px and below) */
-@media (max-width: 767px) {
+@media (max-width: 921px) {
   div.body {
     margin-top: 60px;
   }
@@ -897,12 +897,19 @@ div.followBtns a:hover {
 
 /* Small Mobile Devices (480px and below) */
 @media (max-width: 480px) {
+  html {
+    width: 480px;
+  }
+
   div.body {
     padding: 0 15px;
+    margin-left: 50px;
+    width: 480px;
   }
 
   header div.head {
     padding: 0 15px;
+    width: 480px;
   }
 
   div.hero h1 {
@@ -934,6 +941,11 @@ div.followBtns a:hover {
     width: 120px;
     height: 45px;
     font-size: 14px;
+  }
+
+  div.blueLine {
+    width: 480px;
+    margin-left: 50px;
   }
 }
 
