@@ -145,6 +145,12 @@ const enhanceFormValidation = () => {
   });
 };
 
+// Initialize mobile menu
+document.addEventListener('DOMContentLoaded', function() {
+  createMobileMenu();
+  enhanceFormValidation();
+});
+
 
 
 

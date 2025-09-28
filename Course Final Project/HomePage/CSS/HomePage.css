@@ -38,7 +38,7 @@ div.body {
   width: 100%;
   max-width: 1200px;
   height: auto;
-  min-height: 4000px;
+  /* min-height: 4000px; */
   margin-top: 70px;
   padding: 0 20px;
 }
@@ -688,7 +688,7 @@ div.followBtns a:hover {
   }
 
   div#PRODUCT.section {
-    margin-top: 200px;
+    padding-top: 0px;
   }
 
   div.hero h1 {

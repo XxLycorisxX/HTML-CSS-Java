@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PrJs24</title>
+  </head>
+  <body>
+    <script>
+      function camelize(str) {
+        const words = str.split("-");
+        console.log(words);
+        for (let i = 1; i < words.length; i++) {
+          words[i] = words[i][0].toUpperCase() + words[i].slice(1);
+        }
+        return words.join("");
+      }
+      //   console.log(camelize("my-short-string"));
+      function sliceArr() {
+        const fruits = ["kiwi", "apple", "kiwi", "orange", "kiwi", "apple"];
+        const newArr = fruits.slice(3);
+        console.log(newArr);
+      }
+      //   sliceArr();
+      //   let arr = [2, 5, 9];
+      //   arr.splice(1, 1);
+      //   console.log(arr);
+      let arr = [1, 2, 3, 4, 5];
+      arr.splice(1, 0, "a", "b");
+      arr.splice(6, 0, "c");
+      arr.splice(8, 0, "e");
+      console.log(arr);
+
+      
+    </script>
+  </body>
+</html>
